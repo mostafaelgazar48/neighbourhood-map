@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Neighboorhood Map</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/lib/jQuery.js"></script>
+    
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/lib/bootstrap.min.js"></script>
+</head>
+<body>
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" style="color:antiquewhite">Neighboorhood Map</a>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+Places                    </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" data-bind="foreach: locationList">
+                    <li data-bind="text:title, click: show"></li>
+
+                </ul>
+            </div>
+            <div class="filter pull-right">
+                <div class="input-group">
+                    <input type="text" class="form-control search" placeholder="Filter your places" data-bind="textInput: Item, valueUpdate: 'afterkeydown'">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default">find</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+      
+        
+        <div id="map" style=""></div>
+     <script src="js/lib/knockout.min.js"></script>
+     
+     <script src="js/data.js"></script>
+     <script src="js/mymain.js"></script>
+     <script async defer
+       src="https://maps.googleapis.com/maps/api/js?libraries=places,drawing,geometry&key=AIzaSyAQsuYTeB23DM5w23OMAjsUYm7-CxWIcyI&callback=initMap" onerror="Errors()">
+     </script>
+</body>
+</html>
